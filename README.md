@@ -19,7 +19,7 @@
 * Clone the repository by running the following command to your desktop:
 
 ```bash
-git clone https://github.com/
+git clone https://github.com/BriancaKnight/Packer-Tracker.Solution.git
 ```
 
 * Make sure .gitignore is added to the repository.

@@ -8,33 +8,32 @@ namespace PackerTracker.TestTools
 [TestClass]
 public class ItemTests
 {
-  
+Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat", false}, {"sunglasses", true}};
+
  [TestMethod]
 
   public void ItemConstructor_CreateInstanceOfItem_Item()
   {
-    Item newItem = new Item("hat");
+    Item newItem = new Item(propDictionary);
     Assert.AreEqual(typeof(Item), newItem.GetType());
   }
 
   [TestMethod]
-  public void GetUserItem_ReturnUserItemValue_String()
+  public void GetUserItem_ReturnUserItemValue_Dictionary()
   {
-    string userItem = "hat";
-    Item newItem = new Item(userItem);
-    string result = newItem.UserItem;
-    Assert.AreEqual(userItem, result);
+    Item newItem = new Item(propDictionary);
+    Dictionary<string, bool> result = newItem.UserItem;
+    CollectionAssert.AreEqual(propDictionary, result);
   }
 
   [TestMethod]
-  public void SetUserItem_SetItemValue_String()
+  public void SetUserItem_SetItemValue_Dictionary()
   {
-    string userItem = "hat";
-    Item newItem = new Item(userItem);
-    string updatedUserItem = "sunglasses";
+    Item newItem = new Item(propDictionary);
+    Dictionary<string, bool> updatedUserItem = new Dictionary<string, bool>() {{"hat", true}, {"sunglasses", false}};
     newItem.UserItem = updatedUserItem;
-    string result = newItem.UserItem;
-    Assert.AreEqual(updatedUserItem, result);
+    Dictionary<string, bool> result = newItem.UserItem;
+    CollectionAssert.AreEqual(updatedUserItem, result);
   }
 }
 }
