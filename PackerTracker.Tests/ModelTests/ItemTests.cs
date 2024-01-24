@@ -16,6 +16,7 @@ public class ItemTests
     Item newItem = new Item("hat");
     Assert.AreEqual(typeof(Item), newItem.GetType());
   }
+
   [TestMethod]
   public void GetUserItem_ReturnUserItemValue_String()
   {
@@ -23,6 +24,17 @@ public class ItemTests
     Item newItem = new Item(userItem);
     string result = newItem.UserItem;
     Assert.AreEqual(userItem, result);
+  }
+
+  [TestMethod]
+  public void SetUserItem_SetItemValue_String()
+  {
+    string userItem = "hat";
+    Item newItem = new Item(userItem);
+    string updatedUserItem = "sunglasses";
+    newItem.UserItem = updatedUserItem;
+    string result = newItem.UserItem;
+    Assert.AreEqual(updatedUserItem, result);
   }
 }
 }

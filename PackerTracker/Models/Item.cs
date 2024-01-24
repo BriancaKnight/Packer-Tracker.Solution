@@ -7,7 +7,7 @@ namespace PackerTracker.Models
   public class Item 
   {
 
-  public string UserItem { get; }
+  public string UserItem { get; set;}
   
   public Item(string userItem)
   {
