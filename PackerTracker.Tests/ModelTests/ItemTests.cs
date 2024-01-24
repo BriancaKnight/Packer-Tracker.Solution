@@ -6,12 +6,16 @@ using System;
 namespace PackerTracker.TestTools
 {
 [TestClass]
-public class ItemTests
+public class ItemTests : IDisposable
 {
+public void Dispose()
+{
+  Item.ClearAll();
+}
+
 Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat", false}, {"sunglasses", true}};
 
  [TestMethod]
-
   public void ItemConstructor_CreateInstanceOfItem_Item()
   {
     Item newItem = new Item(propDictionary);
@@ -34,6 +38,22 @@ Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat"
     newItem.UserItem = updatedUserItem;
     Dictionary<string, bool> result = newItem.UserItem;
     CollectionAssert.AreEqual(updatedUserItem, result);
+  }
+  
+  // [TestMethod]
+  // public void GetAll_ReturnsEmptyList_ItemList()
+  // {
+  //   List<Item> newList = new List<Item> { };
+  //   List<Item> result = Item.GetAll();
+  //   CollectionAssert.AreEqual(newList, result);
+  // }
+  [TestMethod]
+  public void ClearAll_DeletesAllItemsInList_Void()
+  {
+    Item newItem = new Item(propDictionary);
+    List<Item> expected = new List<Item> { };
+    Item.ClearAll();
+    CollectionAssert.AreEqual(expected, Item.GetAll());
   }
 }
 }
