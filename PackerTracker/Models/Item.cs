@@ -8,10 +8,12 @@ namespace PackerTracker.Models
   {
   public Dictionary<string, bool> UserItem { get; set;}
   private static List<Item> _instances = new List<Item> { };
+   public int Id { get; }
   public Item(Dictionary<string, bool> userItem)
   {
     UserItem = userItem;
     _instances.Add(this);
+    Id = _instances.Count;
   }
 
   public static void ClearAll()

@@ -68,5 +68,14 @@ Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat"
     List<Item> result = Item.GetAll();
     CollectionAssert.AreEqual(newList, result);
   }
+  [TestMethod]
+  public void GetId_ItemsIsntantiateWithAnIdAndGetterReturns_Int()
+  {
+    Dictionary <string, bool> dictionary = new Dictionary<string, bool> {{"hat", false}, {"sunglasses", true}};
+    Item newItem = new Item(dictionary);
+    int result = newItem.Id;
+    Assert.AreEqual(1, result);
+  }
+  
 }
 }
