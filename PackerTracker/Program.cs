@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ProjectName
+namespace PackerTracker
 {
   class Program
   {
@@ -17,7 +17,7 @@ namespace ProjectName
       app.UseHttpsRedirection();
 
       app.UseRouting();
-
+      app.UseStaticFiles();
       app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}"
