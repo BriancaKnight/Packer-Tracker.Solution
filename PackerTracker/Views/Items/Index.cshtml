@@ -16,18 +16,23 @@
     @if (Model.Count == 0)
     {
       <p>There are no items in the list.</p>
-    }
+      }
+    
+    else
+    {
     <ul>
       @foreach (Item item in Model)
-      {
-        <li><a href='/items/@item.Id'>@item.UserItem</a></li>
-      }
+    
+        {
+          <li>@item.UserItem.Keys.First()</li>
+       }
+    
     </ul>
-
+    }
     <a href="/items/new">Add a new item.</a>
 
-    <!-- <form action="/items/delete" method="post">
+    <form action="/items/delete" method="post">
       <button type="submit" name="button">Clear All Items</button>
-    </form> -->
+    </form>
   </body>
 </html>

@@ -89,3 +89,7 @@ Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat"
   }
 }
 }
+
+
+
+   Dictionary <string, bool> dictionary1 = new Dictionary<string, bool> {{"Name", "hat"}, {"Packed", true}};

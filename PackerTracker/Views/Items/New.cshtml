@@ -10,7 +10,10 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <p>This is the add item page.</p>
+    <form action="/items" method="post">
+      <label for="userItem">Add a new item</label>
+      <input id="userItem" name="userItem" type="text">
+      <button type="submit">Submit</button>
     </form>
   </body>
 </html>
