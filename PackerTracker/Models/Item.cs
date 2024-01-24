@@ -13,13 +13,15 @@ namespace PackerTracker.Models
     UserItem = userItem;
     _instances.Add(this);
   }
-  public static List<Item> GetAll()
-  {
-    return _instances;
-  }
+
   public static void ClearAll()
   {
     _instances.Clear();
+  }
+
+    public static List<Item> GetAll()
+  {
+    return _instances;
   }
 }
 }

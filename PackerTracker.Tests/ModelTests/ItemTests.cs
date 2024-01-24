@@ -40,13 +40,6 @@ Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat"
     CollectionAssert.AreEqual(updatedUserItem, result);
   }
   
-  // [TestMethod]
-  // public void GetAll_ReturnsEmptyList_ItemList()
-  // {
-  //   List<Item> newList = new List<Item> { };
-  //   List<Item> result = Item.GetAll();
-  //   CollectionAssert.AreEqual(newList, result);
-  // }
   [TestMethod]
   public void ClearAll_DeletesAllItemsInList_Void()
   {
@@ -54,6 +47,14 @@ Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat"
     List<Item> expected = new List<Item> { };
     Item.ClearAll();
     CollectionAssert.AreEqual(expected, Item.GetAll());
+  }
+
+  [TestMethod]
+  public void GetAll_ReturnsEmptyList_ItemList()
+  {
+    List<Item> newList = new List<Item> { };
+    List<Item> result = Item.GetAll();
+    CollectionAssert.AreEqual(newList, result);
   }
 }
 }
