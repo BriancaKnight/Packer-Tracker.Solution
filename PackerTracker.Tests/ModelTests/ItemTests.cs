@@ -77,5 +77,15 @@ Dictionary<string, bool> propDictionary = new Dictionary<string, bool>() {{"hat"
     Assert.AreEqual(1, result);
   }
   
+  [TestMethod]
+  public void Find_ReturnsCorrectItem_Item()
+  {
+    Dictionary <string, bool> dictionary1 = new Dictionary<string, bool> {{"hat", false}, {"sunglasses", true}};
+    Dictionary <string, bool> dictionary2 = new Dictionary<string, bool> {{"sunscreen", true}, {"bathing suit", false}};
+    Item newItem1 = new Item(dictionary1);
+    Item newItem2 = new Item(dictionary2);
+    Item result = Item.Find(2);
+    Assert.AreEqual(newItem2, result);
+  }
 }
 }

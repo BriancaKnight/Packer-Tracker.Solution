@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-// using PackerTracker.Models;
-// using System;
 
 namespace PackerTracker.Models
 {
@@ -24,6 +22,11 @@ namespace PackerTracker.Models
     public static List<Item> GetAll()
   {
     return _instances;
+  }
+
+  public static Item Find(int searchId)
+  {
+    return _instances[searchId - 1];
   }
 }
 }
