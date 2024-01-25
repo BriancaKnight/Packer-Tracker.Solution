@@ -78,6 +78,26 @@ namespace PackerTracker.Tests
     CollectionAssert.AreEqual(expected, Item.GetAll());
   }
   
+  [TestMethod]
+  public void GetAll_ReturnsItemsInList_ItemList()
+  {
+      Item newItem1 = new Item("hat", false);
+      Item newItem2 = new Item("socks", false);
+      List<Item> newList = new List<Item> {newItem1, newItem2};
+      List<Item> result = Item.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+  }
+   
+//     Dictionary <string, bool> dictionary1 = new Dictionary<string, bool> {{"hat", false}, {"sunglasses", true}};
+//     Dictionary <string, bool> dictionary2 = new Dictionary<string, bool> {{"sunscreen", true}, {"bathing suit", false}};
+//     Item newItem1 = new Item(dictionary1);
+//     Item newItem2 = new Item(dictionary2);
+//     List<Item> newList = new List<Item> { newItem1, newItem2 };
+//     List<Item> result = Item.GetAll();
+//     CollectionAssert.AreEqual(newList, result);
+//   }
+
+
   }
 }
 
