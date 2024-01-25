@@ -77,7 +77,7 @@ namespace PackerTracker.Tests
     Item.ClearAll();
     CollectionAssert.AreEqual(expected, Item.GetAll());
   }
-  
+
   [TestMethod]
   public void GetAll_ReturnsItemsInList_ItemList()
   {
@@ -88,14 +88,13 @@ namespace PackerTracker.Tests
       CollectionAssert.AreEqual(newList, result);
   }
    
-//     Dictionary <string, bool> dictionary1 = new Dictionary<string, bool> {{"hat", false}, {"sunglasses", true}};
-//     Dictionary <string, bool> dictionary2 = new Dictionary<string, bool> {{"sunscreen", true}, {"bathing suit", false}};
-//     Item newItem1 = new Item(dictionary1);
-//     Item newItem2 = new Item(dictionary2);
-//     List<Item> newList = new List<Item> { newItem1, newItem2 };
-//     List<Item> result = Item.GetAll();
-//     CollectionAssert.AreEqual(newList, result);
-//   }
+  [TestMethod]
+  public void GetId_ItemsIsntantiateWithAnIdAndGetterReturns_Int()
+  {
+    Item newItem = new Item("sunglasses", true);
+    int result = newItem.Id;
+    Assert.AreEqual(1, result);
+  }
 
 
   }
