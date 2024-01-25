@@ -21,6 +21,7 @@ namespace PackerTracker.Models
   {
     _instances.Clear();
   }
+  
   public static List<Category> GetAll()
   {
     return _instances;
@@ -29,6 +30,11 @@ namespace PackerTracker.Models
   public static Category Find(int searchId)
   {
     return _instances[searchId-1];
-  }
+  } 
+
+   public void AddItem(Item item)
+    {
+      Items.Add(item);
+    }
   }
 }
