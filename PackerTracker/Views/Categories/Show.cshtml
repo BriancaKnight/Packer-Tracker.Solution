@@ -14,13 +14,12 @@
 
     <h3>Here are all the items in this category:</h3>
 
-    <ol>
+    <form>
     @foreach (Item item in @Model["items"])
     {
-      <li><a href='/categories/@Model["category"].Id/items/@item.Id'>@item.Name</a></li>
-      <li>@item.Packed</li>
+      <input href='/categories/@Model["category"].Id/items/@item.Id'>@item.Name</input>
     }
-    </ol>
+    </form>
 
     <p><a href='/categories/@Model["category"].Id/items/new'>Add a new item</a></p>
     <p><a href='/categories'>Return to category list</a></p>

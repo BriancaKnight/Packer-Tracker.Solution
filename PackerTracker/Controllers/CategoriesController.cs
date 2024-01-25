@@ -29,11 +29,11 @@ namespace PackerTracker.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/categories/{id}")]
+    [HttpGet("/categories/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory =Category.Find(id);
+      Category selectedCategory = Category.Find(id);
       List<Item> categoryItems = selectedCategory.Items;
       model.Add("category", selectedCategory);
       model.Add("items", categoryItems);
