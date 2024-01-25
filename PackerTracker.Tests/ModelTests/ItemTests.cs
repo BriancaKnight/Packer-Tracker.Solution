@@ -103,20 +103,14 @@ namespace PackerTracker.Tests
   Item result = Item.Find(2);
   Assert.AreEqual(newItem2, result);
   }
+
+  [TestMethod]
+  public void Switch_SwitchValueOfBool_Bool()
+  {
+    Item newItem = new Item("socks", false);
+    newItem.Switch();
+    Assert.IsTrue(newItem.Packed);
+  }
   }
 }
-  
-//   [TestMethod]
-//   public void Find_ReturnsCorrectItem_Item()
-//   {
-//     Dictionary <string, bool> dictionary1 = new Dictionary<string, bool> {{"hat", false}, {"sunglasses", true}};
-//     Dictionary <string, bool> dictionary2 = new Dictionary<string, bool> {{"sunscreen", true}, {"bathing suit", false}};
-//     Item newItem1 = new Item(dictionary1);
-//     Item newItem2 = new Item(dictionary2);
-//     Item result = Item.Find(2);
-//     Assert.AreEqual(newItem2, result);
-//   }
-// }
-// }
-
 
