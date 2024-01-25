@@ -3,7 +3,7 @@ namespace PackerTracker.Models
   public class Item
   {
       public string Name {get; set;}
-      public bool Packed {get;}
+      public bool Packed {get; set;}
    
     public Item(string name, bool packed)
     {

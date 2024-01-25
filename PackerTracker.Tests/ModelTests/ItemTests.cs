@@ -44,6 +44,16 @@ namespace PackerTracker.TestTools{
     Assert.AreEqual(packed, result);
   }
 
+    [TestMethod]
+  public void SetBool_SetItemBoolValue_Bool()
+  {
+    bool packed = false;
+    Item newItem = new Item("hat", packed);
+    bool updatedBool = true;
+    newItem.Packed = updatedBool;
+    bool result = newItem.Packed;
+    Assert.AreEqual(updatedBool, result);
+  }
   }
 }
 
