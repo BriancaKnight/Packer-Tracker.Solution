@@ -12,13 +12,14 @@ namespace ToDoList.Tests
     {
       Category.ClearAll();
     }
-    
+
   [TestMethod]
     public void CategoryConstructor_CreatesInstanceOfCategory_Category()
     {
       Category newCategory = new Category("test category");
       Assert.AreEqual(typeof(Category), newCategory.GetType());
     }
+    
   [TestMethod]
   public void GetName_ReturnsName_String()
   {
@@ -36,5 +37,17 @@ namespace ToDoList.Tests
     int result = newCategory.Id;
     Assert.AreEqual(1, result);
   }
+  [TestMethod]
+  public void GetAll_ReturnsAllCategoryObjects_CategoryList()
+  {
+  string name01 = "hiking";
+  string name02 = "camping";
+  Category newCategory1 = new Category(name01);
+  Category newCategory2 = new Category(name02);
+  List<Category> newList = new List<Category> {newCategory1, newCategory2};
+  List<Category> result = Category.GetAll();
+  CollectionAssert.AreEqual(newList, result);
+  }
+
   }
 }
