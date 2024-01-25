@@ -2,11 +2,13 @@ namespace PackerTracker.Models
 {
   public class Item
   {
-      public string UserItem {get; set;}
+      public string Name {get; set;}
+      public bool Packed {get;}
    
-    public Item(string userItem)
+    public Item(string name, bool packed)
     {
-      UserItem = userItem;
+      Name = name;
+      Packed = packed;
     }
   }
 }

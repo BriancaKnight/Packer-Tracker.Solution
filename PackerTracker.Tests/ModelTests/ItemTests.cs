@@ -12,27 +12,36 @@ namespace PackerTracker.TestTools{
     [TestMethod]
     public void ItemConstructor_CreateInstanceOfItem_Item()
   {
-    Item newItem = new Item("hat");
+    Item newItem = new Item("hat", false);
     Assert.AreEqual(typeof(Item), newItem.GetType());
   }
    [TestMethod]
-   public void GetUserItem_ReturnUserItemValue_String()
+   public void GetName_ReturnNameValue_String()
   {
-     string userItem = "hat";
-     Item newItem = new Item(userItem);
-     string result = newItem.UserItem;
-     Assert.AreEqual(userItem, result);
+     string name = "hat";
+     Item newItem = new Item(name, false);
+     string result = newItem.Name;
+     Assert.AreEqual(name, result);
   }
 
     [TestMethod]
-  public void SetUserItem_SetItemValue_String()
+  public void SetNameItem_SetItemNameValue_String()
   {
-    string userItem = "hat";
-    Item newItem = new Item(userItem);
-    string updatedUserItem = "sunglasses";
-    newItem.UserItem = updatedUserItem;
-    string result = newItem.UserItem;
-    Assert.AreEqual(updatedUserItem, result);
+    string name = "hat";
+    Item newItem = new Item(name, false);
+    string updatedName = "sunglasses";
+    newItem.Name = updatedName;
+    string result = newItem.Name;
+    Assert.AreEqual(updatedName, result);
+  }
+  
+  [TestMethod]
+  public void GetItemBool_ReturnItemBoolValue_Bool()
+  {
+    bool packed = false;
+    Item newItem = new Item("hat", packed);
+    bool result = newItem.Packed;
+    Assert.AreEqual(packed, result);
   }
 
   }
