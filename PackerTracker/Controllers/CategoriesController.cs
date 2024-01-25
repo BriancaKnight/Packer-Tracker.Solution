@@ -52,5 +52,6 @@ namespace PackerTracker.Controllers
       model.Add("category", foundCategory);
       return View("Show", model);
      }
+
   }
 }

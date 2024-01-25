@@ -32,6 +32,7 @@ namespace PackerTracker.Models
   }
 
     public void Switch()
+    
     {
      Packed = !Packed;
     }

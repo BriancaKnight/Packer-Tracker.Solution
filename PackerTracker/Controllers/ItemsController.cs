@@ -23,6 +23,15 @@ namespace PackerTracker.Controllers
       model.Add("category", category);
       return View(model);
     }
-   
+
+    [HttpPost("/categories/{categoryId}/items/{itemId}/switch")]
+      public ActionResult SwitchPacked(int categoryId, int itemId)
+      {
+      Item item = Item.Find(itemId);
+    
+      item.Switch();
+      
+      return RedirectToAction("Show", new { categoryId, itemId });
+      }
   }
 }

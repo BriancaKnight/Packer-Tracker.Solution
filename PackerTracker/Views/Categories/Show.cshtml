@@ -13,14 +13,21 @@
     @using PackerTracker.Models;
 
     <h3>Here are all the items in this category:</h3>
-
-    <form>
+    <h4>@Model["category"].Name</h4>
+    <br/>
+ <form method="post" action="/categories/@Model["category"].Id/items/switch">
     @foreach (Item item in @Model["items"])
     {
-      <input href='/categories/@Model["category"].Id/items/@item.Id'>@item.Name</input>
+      <label>
+        <input type="checkbox" id="@item.Id" name="selectedItems" value="@item.Id"><a href='/categories/@Model["category"].Id/items/@item.Id'>
+        @item.Name
+        </a>
+      </label>
+      <br/> 
     }
+    <button type="submit" >Mark as Packed</button>
     </form>
-
+    <br/>
     <p><a href='/categories/@Model["category"].Id/items/new'>Add a new item</a></p>
     <p><a href='/categories'>Return to category list</a></p>
     <p><a href='/'>Return to Main Page</a></p>
