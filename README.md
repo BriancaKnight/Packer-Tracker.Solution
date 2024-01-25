@@ -64,3 +64,42 @@ Email: (mailto:<briancaknight@gmail.com>)
 Email: (mailto:<monboza@gmail.com>)
 
 Copyright (c) January 24, 2024 Brianca Knight and Monica Barboza
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Packer Tracker</title>
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+      crossorigin="anonymous">
+  </head>
+  <body>
+    @using PackerTracker.Models;
+
+    <h1>Packer Tracker</h1>
+    @if (Model.Count == 0)
+    {
+      <p>There are no items in the list.</p>
+      }
+    
+    else
+    {
+    <ul>
+      @foreach (Item item in Model)
+    
+        {
+          <li>@item.UserItem.Keys.First()</li>
+       }
+    
+    </ul>
+    }
+    <a href="/items/new">Add a new item.</a>
+
+    <form action="/items/delete" method="post">
+      <button type="submit" name="button">Clear All Items</button>
+    </form>
+  </body>
+</html> -->
