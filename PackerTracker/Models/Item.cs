@@ -1,15 +1,28 @@
+using System.Collections.Generic;
+
 namespace PackerTracker.Models
 {
   public class Item
   {
       public string Name {get; set;}
       public bool Packed {get; set;}
-   
+      private static List<Item> _instances = new List<Item> { };
+      
     public Item(string name, bool packed)
     {
       Name = name;
       Packed = packed;
+      _instances.Add(this);
     }
+     public static List<Item> GetAll()
+    {
+      return _instances;
+    }
+
+    public static void ClearAll()
+  {
+    _instances.Clear();
+  }
   }
 }
 

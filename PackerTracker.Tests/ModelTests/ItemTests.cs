@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using PackerTracker.Models;
 using System;
 
-namespace PackerTracker.TestTools{
+namespace PackerTracker.Tests
+{
 
   [TestClass]
-  public class PackerTrackerTests
+  public class ItemTests : IDisposable
   {
+      public void Dispose()
+      {
+      Item.ClearAll();
+      }
+  
+  
 
     [TestMethod]
     public void ItemConstructor_CreateInstanceOfItem_Item()
@@ -54,6 +61,23 @@ namespace PackerTracker.TestTools{
     bool result = newItem.Packed;
     Assert.AreEqual(updatedBool, result);
   }
+   [TestMethod]
+  public void GetAll_ReturnsEmptyList_ItemList()
+  {
+    List<Item> newList = new List<Item> { };
+    List<Item> result = Item.GetAll();
+    CollectionAssert.AreEqual(newList, result);
+  }
+
+  [TestMethod]
+  public void ClearAll_DeletesAllItemsInList_Void()
+  {
+    Item newItem = new Item("hat", false);
+    List<Item> expected = new List<Item> { };
+    Item.ClearAll();
+    CollectionAssert.AreEqual(expected, Item.GetAll());
+  }
+  
   }
 }
 
