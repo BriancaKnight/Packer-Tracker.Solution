@@ -15,7 +15,7 @@
     <h3>Here are all the items in this category:</h3>
     <h4>@Model["category"].Name</h4>
     <br/>
- <form method="post" action="/categories/@Model["category"].Id/items/switch">
+ <form method="post" >
     @foreach (Item item in @Model["items"])
     {
       <label>

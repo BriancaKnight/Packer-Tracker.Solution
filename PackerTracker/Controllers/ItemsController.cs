@@ -24,14 +24,14 @@ namespace PackerTracker.Controllers
       return View(model);
     }
 
-    [HttpPost("/categories/{categoryId}/items/{itemId}/switch")]
-      public ActionResult SwitchPacked(int categoryId, int itemId)
-      {
-      Item item = Item.Find(itemId);
+    // [HttpPost("/categories/{categoryId}/items/{itemId}/switch")]
+    //   public ActionResult SwitchPacked(int categoryId, int itemId)
+    //   {
+    //   Item item = Item.Find(itemId);
     
-      item.Switch();
+    //   item.Switch();
       
-      return RedirectToAction("Show", new { categoryId, itemId });
-      }
+    //   return RedirectToAction("Show", new { categoryId, itemId });
+    //   }
   }
 }
