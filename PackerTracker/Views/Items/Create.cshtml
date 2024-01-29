@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PackerTracker.Models.Item
+
+<h4>Add New Item</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <input type="submit" vlaue="Add new item" />
+}
+<p>@Html.ActionLink("Show all items", "Index")</p>
