@@ -7,7 +7,7 @@ namespace PackerTracker.Models
       public string Name {get; set;}
       public bool Packed {get; set;}
       private static List<Item> _instances = new List<Item> { };
-      public int Id { get; }
+      public int ItemId { get; }
       
     public Item(string name, bool packed)
     {
